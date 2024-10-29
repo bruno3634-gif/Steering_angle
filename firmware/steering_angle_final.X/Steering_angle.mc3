@@ -1,4 +1,4 @@
-<config configName="default" projectName="Steering_angle" configVersion="1.1" device="PIC32MK1024MCM064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.6.1">
+<config configName="default" projectName="Steering_angle" configVersion="1.1" device="PIC32MK1024MCM064" deviceLibraryClass="com.microchip.mcc.harmony.Harmony3Library" coreVersion="5.7.0">
    <usedPackages class="java.util.ArrayList"/>
    <usedClasses class="java.util.TreeMap">
       <entry>
@@ -8140,7 +8140,7 @@
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="core" name="!@#harmonyUserData"/>
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;UserData&gt;
   &lt;UserData dnOrder=&quot;0&quot;&gt;
-    &lt;GraphSettings canvasHeight=&quot;237&quot; canvasWidth=&quot;1397&quot; dnOrder=&quot;0&quot;/&gt;
+    &lt;GraphSettings canvasHeight=&quot;235&quot; canvasWidth=&quot;1386&quot; dnOrder=&quot;0&quot;/&gt;
     &lt;PowerProfiles dnOrder=&quot;1&quot;&gt;
       &lt;Profile dnOrder=&quot;0&quot; id=&quot;profile0&quot; name=&quot;Main&quot;/&gt;
     &lt;/PowerProfiles&gt;
@@ -8149,11 +8149,11 @@
         &lt;ElementPosition dnOrder=&quot;0&quot; id=&quot;adchs&quot; x=&quot;125&quot; y=&quot;125&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;1&quot; id=&quot;can1&quot; x=&quot;584&quot; y=&quot;27&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;2&quot; id=&quot;core&quot; x=&quot;240&quot; y=&quot;20&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core_timer&quot; x=&quot;1260&quot; y=&quot;20&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;3&quot; id=&quot;core_timer&quot; x=&quot;397&quot; y=&quot;305&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;4&quot; id=&quot;dfp&quot; x=&quot;20&quot; y=&quot;20&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;5&quot; id=&quot;eeprom&quot; x=&quot;30&quot; y=&quot;60&quot;/&gt;
         &lt;ElementPosition dnOrder=&quot;6&quot; id=&quot;stdio&quot; x=&quot;656&quot; y=&quot;129&quot;/&gt;
-        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;uart1&quot; x=&quot;515&quot; y=&quot;115&quot;/&gt;
+        &lt;ElementPosition dnOrder=&quot;7&quot; id=&quot;uart1&quot; x=&quot;518&quot; y=&quot;116&quot;/&gt;
       &lt;/ElementPositions&gt;
     &lt;/ComponentGraph&gt;
   &lt;/UserData&gt;
@@ -9320,7 +9320,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CORE_TIMER_INTERRUPT_ENABLE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -9331,7 +9331,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CORE_TIMER_INTERRUPT_ENABLE_UPDATE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;false&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -9342,7 +9342,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CORE_TIMER_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;CORE_TIMER_InterruptHandler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;CORE_TIMER_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -9353,7 +9353,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;CORE_TIMER_INTERRUPT_HANDLER_LOCK&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core_timer&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -9419,7 +9419,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_0_ENABLE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -9430,7 +9430,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_0_HANDLER_LOCK&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;true&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -9441,7 +9441,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core&gt;
   &lt;core dnOrder=&quot;0&quot; id=&quot;EVIC_0_INTERRUPT_HANDLER&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;CORE_TIMER_InterruptHandler&quot;/&gt;
+      &lt;Dynamic dnOrder=&quot;0&quot; id=&quot;core&quot; value=&quot;CORE_TIMER_Handler&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core&gt;
 &lt;/core&gt;
@@ -11764,7 +11764,7 @@
          <value>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;core_timer&gt;
   &lt;core_timer dnOrder=&quot;0&quot; id=&quot;CORE_TIMER_INTERRUPT_MODE&quot;&gt;
     &lt;Values dnOrder=&quot;0&quot;&gt;
-      &lt;User dnOrder=&quot;0&quot; value=&quot;true&quot;/&gt;
+      &lt;User dnOrder=&quot;0&quot; value=&quot;false&quot;/&gt;
     &lt;/Values&gt;
   &lt;/core_timer&gt;
 &lt;/core_timer&gt;
@@ -12482,119 +12482,119 @@
    </tokenMap>
    <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
-         <file>..\src\config\default\definitions.h</file>
-         <hash>ea0d33407cfd1e53173aae615b8d30baf8f9fb92bc607a8b9a611070923db52e</hash>
+         <file>../src/config/default/definitions.h</file>
+         <hash>e86fabda531b6878a79e424e549fe6aedbce5b0356b94229fa4becb3f0fa103d</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\device.h</file>
+         <file>../src/config/default/device.h</file>
          <hash>10ec93c43a7b158a129ae05bd8f4a59ff5bcf3d0f3f062fdd64c374bc2d42099</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\exceptions.c</file>
-         <hash>51869a2069933bd13284df52f5f993f4e8b83ae6097dda36c4b1fc6e818df86d</hash>
+         <file>../src/config/default/exceptions.c</file>
+         <hash>265c985839caadb2fa9e8fc76e7bc3c160e31e9b2c96dc4006add33e5d7ee212</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\initialization.c</file>
-         <hash>000e93eeb99b0599a2a48a06d3a6415910b5025eb4400f8d7d528a1cb3ff4cc6</hash>
+         <file>../src/config/default/initialization.c</file>
+         <hash>fdbffff38b0b1d9351c917eb6263bd2143386d56bc607a45d193a4708bef5855</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\interrupts.c</file>
-         <hash>9c10fc2bc7245ddfbf007bcb9e2d8c9c12237c2efdce0ca09caddd6273cfbf9f</hash>
+         <file>../src/config/default/interrupts.c</file>
+         <hash>3ab1a27f7f8c544d0cccd1180d0e803143bfb1163de1222e05dc713571ac9ebf</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\interrupts.h</file>
-         <hash>1a25d56eb5971dcec03de9c7027ec526b8087f1e549f57bb85ba6e03c29ea078</hash>
+         <file>../src/config/default/interrupts.h</file>
+         <hash>9afcf614ee6bb98d29d6a35e6cb35cb9315d6a59c77dfc98d675405525c6d40e</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\p32MK1024MCM064.ld</file>
+         <file>../src/config/default/p32MK1024MCM064.ld</file>
          <hash>b8998b4af35d2554f3852d6ba6d8ef3bf0307efef8938c0cb4ea4194182da098</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\adchs\plib_adchs.c</file>
+         <file>../src/config/default/peripheral/adchs/plib_adchs.c</file>
          <hash>763fe0f2170f56bafddf803d503b04529a9a07a1c99a15584f8ec8c916341814</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\adchs\plib_adchs.h</file>
+         <file>../src/config/default/peripheral/adchs/plib_adchs.h</file>
          <hash>92e6af4a81b6f5ec626422a05fb890e0c5d536acd35a0b67ec71723a05832baa</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\adchs\plib_adchs_common.h</file>
+         <file>../src/config/default/peripheral/adchs/plib_adchs_common.h</file>
          <hash>dd5ab056c45fde6d45c65e87abf1b86d05c0e696ee3bac54a1ebc921ee2e26ff</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\canfd\plib_canfd1.c</file>
+         <file>../src/config/default/peripheral/canfd/plib_canfd1.c</file>
          <hash>bbd697061a3b84d69698352f57f2e279a996e3cfb50c198a3942879fcba0fd16</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\canfd\plib_canfd1.h</file>
+         <file>../src/config/default/peripheral/canfd/plib_canfd1.h</file>
          <hash>2dbb472e9a512fd2d2e4037783adf985ccf44906945cc82d930ab3fb343d6e7a</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\canfd\plib_canfd_common.h</file>
+         <file>../src/config/default/peripheral/canfd/plib_canfd_common.h</file>
          <hash>fbf5091541d361f023f2c1fa3f04173ed84db75e64f475d14e1919856f1bf620</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\clk\plib_clk.c</file>
+         <file>../src/config/default/peripheral/clk/plib_clk.c</file>
          <hash>176546f68cc74809ce3c65bf19f34a30ca9b43f34fdd33431ed7379e0be418e0</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\clk\plib_clk.h</file>
+         <file>../src/config/default/peripheral/clk/plib_clk.h</file>
          <hash>35384f2e13e59b7190bf77f6996baf3ea2377ec42df94979a6f793326def5255</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\coretimer\plib_coretimer.c</file>
-         <hash>2f636a8a90403a73ce55b8397c9ea548bb1e4ef7c022796ec2b3dffe7f97e96c</hash>
+         <file>../src/config/default/peripheral/coretimer/plib_coretimer.c</file>
+         <hash>fffd0d46d7d9a9ed96d7946c68d1f0084d5c1d0248ccbabc72b28b1767f902a1</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\coretimer\plib_coretimer.h</file>
-         <hash>43d3e41ccde2c350df7b47ce49dda5543f6ac162dec45076becd94e54f2f8a2d</hash>
+         <file>../src/config/default/peripheral/coretimer/plib_coretimer.h</file>
+         <hash>d34b7063ef1a236b9af04cfb49df2e60e3f1e5a74e5c2018d2f9c0208b9657f8</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\eeprom\plib_eeprom.c</file>
+         <file>../src/config/default/peripheral/eeprom/plib_eeprom.c</file>
          <hash>add8395f840f5014ffaba999fe20037e9504f4fffced99c6fe4140302720a813</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\eeprom\plib_eeprom.h</file>
+         <file>../src/config/default/peripheral/eeprom/plib_eeprom.h</file>
          <hash>47d6b49625a05e7e762dcb2cca43ff295c357be946d23d98a1c9fc5c2595f516</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\evic\plib_evic.c</file>
-         <hash>849611cefea4418921e6857fea5d5490be885d97b6c330da0fc801ddd1923530</hash>
+         <file>../src/config/default/peripheral/evic/plib_evic.c</file>
+         <hash>0f35b0caee462889ca26a0e50eb85b9e808d5a6d5d1d2079a227c018f28c8e96</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\evic\plib_evic.h</file>
-         <hash>6086a486e69dcf917e225cfbb7aea422ea08ca27ebfdb1091dbec2544d824830</hash>
+         <file>../src/config/default/peripheral/evic/plib_evic.h</file>
+         <hash>7ca2c90979d4e8932f07e4dc6bcea310c2a9404bb0eb5bcfb3712b362db61eac</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\gpio\plib_gpio.c</file>
+         <file>../src/config/default/peripheral/gpio/plib_gpio.c</file>
          <hash>81847597d9f098ebcb4a18a18cb5da0dc6a8a8272ce70bdbf7b40868300efc33</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\gpio\plib_gpio.h</file>
+         <file>../src/config/default/peripheral/gpio/plib_gpio.h</file>
          <hash>a10f7ff092b370df839271a5d8bfa8ebd7162d40ee1d33a0a7f650262a6db945</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\uart\plib_uart1.c</file>
+         <file>../src/config/default/peripheral/uart/plib_uart1.c</file>
          <hash>98125471e901ac7692c9410468020dc404e45b592c0a86c0fe9391a89fee9db1</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\uart\plib_uart1.h</file>
+         <file>../src/config/default/peripheral/uart/plib_uart1.h</file>
          <hash>7a1eb131a20e49ee5e46ba34845ec01b77fdcea9750992bbebccd3dec805b35a</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\peripheral\uart\plib_uart_common.h</file>
+         <file>../src/config/default/peripheral/uart/plib_uart_common.h</file>
          <hash>70213cd740b3ff9a591d93ad6aac9493335851db084dd862275effacdebf710d</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\stdio\xc32_monitor.c</file>
+         <file>../src/config/default/stdio/xc32_monitor.c</file>
          <hash>34c7efa285dd6778faf01a0097bf7bebc131e7a8a0ed97bb737ff3e0a39895d2</hash>
       </entry>
       <entry>
-         <file>..\src\config\default\toolchain_specifics.h</file>
+         <file>../src/config/default/toolchain_specifics.h</file>
          <hash>b4de6e02e3e48c62f7ba233405ffdf6ef31bb971d1a7b49efa1676f45cabc1ac</hash>
       </entry>
       <entry>
-         <file>..\src\main.c</file>
+         <file>../src/main.c</file>
          <hash>d3c233d419e6304bfacbafc18cc68c0f5c26e365f23b20ea40ccfac458f664c5</hash>
       </entry>
    </generatedFileHashHistoryMap>

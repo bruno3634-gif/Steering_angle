@@ -66,7 +66,6 @@
 // Section: System Interrupt Vector declarations
 // *****************************************************************************
 // *****************************************************************************
-void CORE_TIMER_Handler (void);
 void CHANGE_NOTICE_B_Handler (void);
 
 
@@ -75,11 +74,6 @@ void CHANGE_NOTICE_B_Handler (void);
 // Section: System Interrupt Vector definitions
 // *****************************************************************************
 // *****************************************************************************
-void __ISR(_CORE_TIMER_VECTOR, ipl1SRS) CORE_TIMER_Handler (void)
-{
-    CORE_TIMER_InterruptHandler();
-}
-
 void __ISR(_CHANGE_NOTICE_B_VECTOR, ipl1SRS) CHANGE_NOTICE_B_Handler (void)
 {
     CHANGE_NOTICE_B_InterruptHandler();

@@ -216,9 +216,9 @@ void SYS_Initialize ( void* data )
 
 	UART1_Initialize();
 
-    CAN1_Initialize();
-
     EEPROM_Initialize();
+
+    CAN1_Initialize();
 
 
 

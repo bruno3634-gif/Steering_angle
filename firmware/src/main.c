@@ -44,7 +44,7 @@ uint32_t voltage_i;
 uint32_t voltage_f;
 volatile float voltage_20,voltage_40;
 volatile uint16_t adc_0_value;
-unsigned int currentMillis = 0;
+unsigned long currentMillis = 0;
 
 
 
@@ -158,13 +158,10 @@ int main ( void )
         float media_ang = 0;
         
         
-        if(millis()- currentMillis <=500){
-            LED2_Toggle();
-            currentMillis = millis();
-        }
-        if(ADCHS_ChannelResultIsReady(ADCHS_CH3) /*&& v - currentMillis >= 200*/)
+
+        if(ADCHS_ChannelResultIsReady(ADCHS_CH3) && millis() - currentMillis >= 300)
         {
-           // currentMillis = millis();
+            currentMillis = millis();
 
             
             adc_result = ADCHS_ChannelResultGet(ADCHS_CH3);
@@ -200,7 +197,7 @@ int main ( void )
    
             if(CAN1_MessageTransmit(0x500, 8, message, 0, CANFD_MODE_NORMAL, CANFD_MSG_TX_DATA_FRAME))
             {
-                //LED2_Toggle();
+                LED2_Toggle();
             }
             
             ADCHS_ChannelConversionStart(ADCHS_CH3);
@@ -259,7 +256,7 @@ int main ( void )
 
 unsigned int millis(void)
 {
-  return (unsigned int)(CORETIMER_CounterGet() / (CORE_TIMER_FREQUENCY / 1000));
+  return (unsigned long)(CORETIMER_CounterGet() / (CORE_TIMER_FREQUENCY / 1000));
 }
 
 
