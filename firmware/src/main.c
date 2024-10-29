@@ -44,7 +44,11 @@ uint32_t voltage_i;
 uint32_t voltage_f;
 volatile float voltage_20,voltage_40;
 volatile uint16_t adc_0_value;
+unsigned int currentMillis = 0;
 
+
+
+unsigned int millis(void);
 /*
 
 void calibrar(GPIO_PIN pin,uintptr_t context)
@@ -104,25 +108,20 @@ typedef enum {
     EEPROM_OPERATION_IDLE
 } EEPROM_OPERATION_STATE;
 
-volatile int tmr_flag = 1;
-void tmr_int(uint32_t status, uintptr_t context)
-{
-    tmr_flag = 1;
-}
+
+
 
 
 volatile int valor_left,valor_right;
 volatile int address = 0;
 int main ( void )
-{
-    
+{   
+    currentMillis = millis();
+
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     ADCHS_ModulesEnable(ADCHS_MODULE3_MASK);
-    TMR2_CallbackRegister(tmr_int,(uintptr_t)NULL);
-    TMR2_InterruptEnable();
-    TMR2_Start();
-    EEPROM_Initialize();
+   // EEPROM_Initialize();
    /* GPIO_PinInterruptCallbackRegister(GPIO_PIN_RB12,&calibrar,(uintptr_t)NULL);
     GPIO_PinIntEnable(GPIO_PIN_RB12,GPIO_INTERRUPT_ON_FALLING_EDGE);
    
@@ -137,7 +136,7 @@ int main ( void )
     {
         message[i] = 0;
     }
-    
+  /*  
     EEPROM_WordRead( address, valor_left);
     while ( EEPROM_IsBusy() == true )
     {
@@ -150,7 +149,7 @@ int main ( void )
     }
     
     address = 0;
-   
+   */
     //LED_Set();
     ADCHS_ChannelConversionStart(ADCHS_CH3);
     while ( true )
@@ -158,9 +157,15 @@ int main ( void )
 
         float media_ang = 0;
         
-      
-        if(ADCHS_ChannelResultIsReady(ADCHS_CH3) && tmr_flag == 1)
+        
+        if(millis()- currentMillis <=500){
+            LED2_Toggle();
+            currentMillis = millis();
+        }
+        if(ADCHS_ChannelResultIsReady(ADCHS_CH3) /*&& v - currentMillis >= 200*/)
         {
+           // currentMillis = millis();
+
             
             adc_result = ADCHS_ChannelResultGet(ADCHS_CH3);
             voltage = adc_result * 3.3/4095;
@@ -181,25 +186,29 @@ int main ( void )
             
             volatile int ang = media_ang * 100;
             
-                for(int i = 0;i<=64;i++)
+            for(int i = 0;i<=64;i++)
             {
                 message[i] = 0;
             }
 
             message[0] = (ang >> 8) & 0xFF; // Byte mais significativo
             message[1] = ang & 0xFF;
-            message[2] = 2;
-
-            if(CAN1_MessageTransmit(0x200, 8, message, 0, CANFD_MODE_NORMAL, CANFD_MSG_TX_DATA_FRAME))
+            
+            
+            
+  
+   
+            if(CAN1_MessageTransmit(0x500, 8, message, 0, CANFD_MODE_NORMAL, CANFD_MSG_TX_DATA_FRAME))
             {
-               
+                //LED2_Toggle();
             }
             
             ADCHS_ChannelConversionStart(ADCHS_CH3);
-            tmr_flag = 0;
+
+
         }
         
-        if(calibrate_btn_Get() == 1)
+     /*   if(calibrate_btn_Get() == 1)
         {
             while(calibrate_btn_Get() == 1)
             {
@@ -236,13 +245,21 @@ int main ( void )
             address = address + 4;
             }
  
+        
+        }*/
         SYS_Tasks ( );
-        }
-
     /* Execution should not come here during normal operation */
 
-    return ( EXIT_FAILURE );
+    //return ( EXIT_FAILURE );
     }
+}
+
+
+
+
+unsigned int millis(void)
+{
+  return (unsigned int)(CORETIMER_CounterGet() / (CORE_TIMER_FREQUENCY / 1000));
 }
 
 
