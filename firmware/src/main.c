@@ -36,7 +36,7 @@
 // *****************************************************************************
 // *****************************************************************************
 
-uint8_t message[64];
+uint8_t message[8];
 
 volatile uint16_t adc_result;
 volatile float voltage;
@@ -132,10 +132,7 @@ int main ( void )
 //  1.65 --> 0
 //  3.3 -->20
 
-    for(int i = 0;i<=64;i++)
-    {
-        message[i] = 0;
-    }
+
   /*  
     EEPROM_WordRead( address, valor_left);
     while ( EEPROM_IsBusy() == true )
@@ -155,9 +152,8 @@ int main ( void )
     while ( true )
     {
 
-        float media_ang = 0;
         
-        
+        /****  -- Verifica se resultado do adc está pronto e passaram mais de 300ms -- *****/
 
         if(ADCHS_ChannelResultIsReady(ADCHS_CH3) && millis() - currentMillis >= 300)
         {
@@ -169,21 +165,19 @@ int main ( void )
 
             
             
-            for(int i = 0; i<=3;i++)
-            {
-                volatile float angulo = voltage*40/3.3;
-                //angulo = angulo - 20;
-                media_ang = media_ang + angulo;
-            }
+
+            volatile float angulo = voltage*40/3.3;
+            //angulo = angulo - 20;
+            
             
 
             
-            media_ang = media_ang/4;
+            
 
             
-            volatile int ang = media_ang * 100;
+            volatile int ang = angulo * 100;
             
-            for(int i = 0;i<=64;i++)
+            for(int i = 0;i<=8;i++)
             {
                 message[i] = 0;
             }
