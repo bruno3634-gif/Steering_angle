@@ -117,7 +117,7 @@ volatile int address = 0;
 int main ( void )
 {   
     currentMillis = millis();
-
+    
     /* Initialize all modules */
     SYS_Initialize ( NULL );
     ADCHS_ModulesEnable(ADCHS_MODULE3_MASK);
